@@ -100,7 +100,7 @@ export default {
       </div>
     </div>
     <img v-for="(particle, index) in particles" :key="particle.id" :style="particle.style" :src="particle.src"
-    :class="particle.classes" />
+      :class="particle.classes" />
   </main>
 </template>
 
@@ -182,7 +182,14 @@ main {
   position: absolute;
   width: 50px;
   height: 50px;
+
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .particle-animation-1 {
