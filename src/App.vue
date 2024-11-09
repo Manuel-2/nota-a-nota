@@ -1,5 +1,29 @@
+<script>
+import vHeader from "@/components/vHeader.vue";
+
+export default {
+  name: "App",
+  data() {
+    return {
+      reduceMotion: true,
+    }
+  },
+  methods: {
+    setReduceMotions(value) {
+      this.reduceMotion = value;
+    }
+  },
+  components: {
+    vHeader,
+  }
+}
+</script>
+
 <template>
-  <router-view />
+  <div class="master" :class="{ 'background-pane-anim': !reduceMotion }">
+    <vHeader />
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -34,7 +58,6 @@ body {
   font-size: 1.6rem;
 }
 
-
 * {
   padding: 0;
   margin: 0;
@@ -48,6 +71,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #0f0f0f;
+}
+
+.master {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3% 5%;
+  background-color: white;
+  background: url("/src/assets/Partiture.png");
+  background-repeat: repeat;
+  background-size: 600px;
+}
+
+.background-pane-anim {
+  animation: pane 30s infinite linear;
+}
+
+@keyframes pane {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 600px 600px;
+  }
 }
 
 .main-button {

@@ -1,8 +1,4 @@
 <script>
-// import vue components
-import vHeader from "@/components/vHeader.vue"
-
-
 import Blanca from "@/assets/notes/Blanca.svg";
 import Corchea from "@/assets/notes/Corchea.svg";
 import Negra from "@/assets/notes/Negra.svg";
@@ -36,15 +32,19 @@ export default {
       particles: [],
     }
   },
-  components: {
-    vHeader,
+  beforeRouteLeave(to, from, next) {
+    this.$root.setReduceMotions(true);
+    next();
+  },
+  mounted() {
+    this.$root.setReduceMotions(false);
   },
   methods: {
     mouseMove(e) {
       this.lastMousePos.x = this.mousePos.x;
       this.lastMousePos.y = this.mousePos.y;
-      this.mousePos.x = e.x;
-      this.mousePos.y = e.y;
+      this.mousePos.x = e.layerX;
+      this.mousePos.y = e.layerY;
 
       let distance = calcTravelDistance(this.mousePos, this.lastMousePos);
       this.travelDistance += distance;
@@ -84,7 +84,6 @@ export default {
 
 <template>
   <main @mousemove="mouseMove">
-    <vHeader></vHeader>
     <div class="hero">
       <div class="hero__group hero__group--left">
         <h1>Aprende el <strong>lenguaje</strong> de la <strong>música ♪</strong></h1>
@@ -114,26 +113,24 @@ main {
   position: relative;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 3% 5%;
-  background-color: white;
-  background: url("/src/assets/Partiture.png");
-  background-repeat: repeat;
-  background-size: 600px;
-  animation: pane 30s infinite linear;
-
+  padding: 0% 5%;
+  /* background-color: white; */
+  /* background: url("/src/assets/Partiture.png"); */
+  /* background-repeat: repeat; */
+  /* background-size: 600px; */
+  /* animation: pane 30s infinite linear; */
 }
 
-@keyframes pane {
-  from {
-    background-position: 0 0;
-  }
+/* @keyframes pane { */
+/*   from { */
+/*     background-position: 0 0; */
+/*   } */
 
-  to {
-    background-position: 600px 600px;
-  }
-}
+/*   to { */
+/*     background-position: 600px 600px; */
+/*   } */
+/* } */
 
 .hero {
   height: 100%;
@@ -147,14 +144,14 @@ main {
     justify-content: space-between;
     margin-top: 50px;
 
-    .hero__button{
+    .hero__button {
       width: 250px;
       font-size: var(--main-text-size);
       transition: transform 0.2s;
       text-align: center;
     }
 
-    a{
+    a {
       text-decoration: none;
     }
 

@@ -8,13 +8,13 @@
       <nav class="header__nav">
         <ul>
           <li>
-            <router-link to="#">Home</router-link>
+            <router-link to="/">Inicio</router-link>
           </li>
           <li>
-            <router-link to="#">exercies</router-link>
+            <router-link to="#">Sandbox</router-link>
           </li>
           <li>
-            <router-link to="#">about</router-link>
+            <router-link to="#">Acerca</router-link>
           </li>
         </ul>
       </nav>
