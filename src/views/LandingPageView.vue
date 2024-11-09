@@ -91,8 +91,8 @@ export default {
         <p>No importa si no sabes nada sobre partituras, practica con ejercicios interactivos y domina la
           lectura de notación musical.</p>
         <div class="hero__buttons">
-          <button class="secondary-button">Conocer más</button>
-          <button class="main-button">Iniciar</button>
+          <button class="secondary-button hero__button">Conocer más</button>
+          <router-link class="main-button hero__button" to="/">Iniciar</router-link>
         </div>
       </div>
       <div class="hero__group">
@@ -147,13 +147,18 @@ main {
     justify-content: space-between;
     margin-top: 50px;
 
-    button {
+    .hero__button{
       width: 250px;
       font-size: var(--main-text-size);
       transition: transform 0.2s;
+      text-align: center;
     }
 
-    button:hover {
+    a{
+      text-decoration: none;
+    }
+
+    .hero__button:hover {
       transform: scale(1.1);
     }
   }
@@ -184,7 +189,6 @@ main {
   height: 50px;
 
   pointer-events: none;
-  user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
