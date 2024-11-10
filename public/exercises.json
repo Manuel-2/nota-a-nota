@@ -1,0 +1,29 @@
+{
+  "theNotes": {
+    "enable": true,
+    "viewRoute": "/las-notas",
+    "exercises": {
+      "exercise1": {
+        "notes": "do,re,mi",
+        "ascendingOrder": true
+      },
+      "exercise2": {
+        "notes": "do,re,mi",
+        "ascendingOrder": false
+      },
+      "exercise3": {
+        "notes": "do,re,mi,fa,sol,la,si",
+        "ascendingOrder": true
+      },
+      "exercise4": {
+        "notes": "do,re,mi,fa,sol,la,si",
+        "ascendingOrder": false
+      }
+    }
+  },
+  "ThePentagram1": {
+    "enable": true,
+    "viewRoute": "/el-pentagrama",
+    "exercises": {}
+  }
+}
