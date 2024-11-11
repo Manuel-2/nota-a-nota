@@ -5,7 +5,8 @@ export default {
   name: "App",
   data() {
     return {
-      reduceMotion: true,
+      reduceMotion: false,
+      exercises: null,
     }
   },
   methods: {
@@ -15,6 +16,15 @@ export default {
   },
   components: {
     vHeader,
+  },
+  mounted() {
+    if (this.exercises == null) {
+      fetch("/exercises.json").then((a) => {
+        a.json().then((data) => {
+          this.exercises = data;
+        });
+      });
+    }
   }
 }
 </script>
@@ -22,7 +32,7 @@ export default {
 <template>
   <div class="master" :class="{ 'background-pane-anim': !reduceMotion }">
     <vHeader />
-    <router-view />
+    <router-view :exercisesData="exercises" />
   </div>
 </template>
 
@@ -75,20 +85,32 @@ body {
 
 .master {
   width: 100vw;
-  height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* max-width: 100vw; */
+  /* max-height: 100vh; */
+  /* overflow: hidden; */
   position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3% 5%;
+  padding-bottom: 0;
   background-color: white;
   background: url("/src/assets/Partiture.png");
   background-repeat: repeat;
   background-size: 600px;
+}
+
+.main-container-1 {
+  width: 70%;
+  height: 100%;
+  padding: 30px 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  /* background-color: #afafaf; */
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .background-pane-anim {

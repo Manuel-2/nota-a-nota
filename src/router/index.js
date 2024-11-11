@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LandingPageView from '@/views/LandingPageView.vue'
 import HomeView from '@/views/HomeView.vue'
+import NotesView from '@/views/NotesView.vue'
+import ExercisesDisplayView from '@/views/ExercisesDisplayView.vue'
+import PentagramView from "@/views/PentagramView.vue"
 
 const routes = [
   {
@@ -12,6 +15,21 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/las-notas',
+    name: "notes",
+    component: NotesView
+  },
+  {
+    path: '/ejercicios',
+    name: "exercises",
+    component: ExercisesDisplayView
+  },
+  {
+    path: "/el-pentagrama",
+    name: "pentagrama",
+    component: PentagramView
   }
   // {
   //   path: '/about',

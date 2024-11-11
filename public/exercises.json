@@ -1,29 +1,49 @@
 {
-  "theNotes": {
+  "Las-Notas": {
     "enable": true,
+    "title": "Las notas",
+    "description": "Aprende cuales son las notas y su orden al derecho y al revez",
+    "icon":"circleOfNotes",
     "viewRoute": "/las-notas",
     "exercises": {
       "exercise1": {
+        "name": "el do el re y el mi",
         "notes": "do,re,mi",
         "ascendingOrder": true
       },
       "exercise2": {
+        "name": "el do el re y el mi pero alrevez",
         "notes": "do,re,mi",
         "ascendingOrder": false
       },
       "exercise3": {
+        "name": "Todas las notas asendente",
         "notes": "do,re,mi,fa,sol,la,si",
         "ascendingOrder": true
       },
       "exercise4": {
+        "name": "Todas las notas pero alrevez",
         "notes": "do,re,mi,fa,sol,la,si",
         "ascendingOrder": false
       }
     }
   },
-  "ThePentagram1": {
+  "El-Pentagrama-1": {
     "enable": true,
+    "title": "El Pentagrama (clave de sol)",
+    "description": "Localiza todas las notas en el pentagrama y aprende a identificarlas correctamente",
+    "icon":"ClaveDeSolConPentagraDeFondo",
     "viewRoute": "/el-pentagrama",
-    "exercises": {}
+    "exercises": {
+      "exercise1":{
+        "name": "Introducción"
+      },
+      "exercise2":{
+        "name": "Parte inferior del pentagrama de Re a La (asenente)"
+      },
+      "exercise3":{
+        "name": "Parte inferior del pentagrama de Re a La (desendente)"
+      }
+    }
   }
 }

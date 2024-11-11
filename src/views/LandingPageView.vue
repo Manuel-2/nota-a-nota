@@ -33,7 +33,7 @@ export default {
     }
   },
   beforeRouteLeave(to, from, next) {
-    this.$root.setReduceMotions(true);
+    this.$root.setReduceMotions(false);
     next();
   },
   mounted() {
